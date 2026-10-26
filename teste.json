@@ -1,0 +1,9 @@
+import json
+
+with open('Telco_Churn_Classificacao_Modulo3.ipynb', 'r', encoding='utf-8') as f:
+    try:
+        nb = json.load(f)
+        print("✅ JSON válido!")
+    except json.JSONDecodeError as e:
+        print(f"❌ Erro na linha {e.lineno}, coluna {e.colno}: {e.msg}")
+        print(f"Contexto: {e.doc[e.pos-40:e.pos+40]}")
